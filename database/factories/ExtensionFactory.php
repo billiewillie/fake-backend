@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
+use App\Models\Extension;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Category>
+ * @extends Factory<Extension>
  */
-class CategoryFactory extends Factory
+class ExtensionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,8 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->words(1, true)
+            'title' => fake()->fileExtension()
+// 'deb', 'mp4s', 'uvg'
         ];
     }
 }

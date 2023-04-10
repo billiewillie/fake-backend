@@ -13,7 +13,7 @@
         {
             Schema::create('posts', function (Blueprint $table) {
                 $table->id();
-                $table->string('title')->nullable();
+                $table->string('title');
                 $table->unsignedBigInteger('author_id');
                 $table->foreignIdFor(Category::class)->constrained();
                 $table->boolean('is_published')->default(1);

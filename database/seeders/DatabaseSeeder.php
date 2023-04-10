@@ -1,29 +1,31 @@
 <?php
 
-    namespace Database\Seeders;
+namespace Database\Seeders;
 
-    // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-    use Illuminate\Database\Seeder;
-    use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Seeder;
 
-    class DatabaseSeeder extends Seeder
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
     {
-        /**
-         * Seed the application's database.
-         */
-        public function run(): void
-        {
-            $this->call([
-                CategorySeeder::class,
-                RoleSeeder::class,
-                UserSeeder::class,
-                PostSeeder::class,
-                ChannelSeeder::class,
-                GallerySeeder::class,
-                LikeSeeder::class,
-                ViewSeeder::class,
-                CommentSeeder::class,
-                ChannelPostSeeder::class,
-            ]);
-        }
+        $this->call([
+            CategorySeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class,
+            PostSeeder::class,
+            ChannelSeeder::class,
+            GallerySeeder::class,
+            LikeSeeder::class,
+            ViewSeeder::class,
+            CommentSeeder::class,
+            ChannelPostSeeder::class,
+            DepartmentSeeder::class,
+            ExtensionSeeder::class,
+            DocSeeder::class,
+            DownloadSeeder::class,
+        ]);
     }
+}

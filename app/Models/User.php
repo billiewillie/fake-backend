@@ -52,6 +52,11 @@
             return $this->hasMany(Post::class, 'author', 'id');
         }
 
+        public function docs(): HasMany
+        {
+            return $this->hasMany(Doc::class, 'author', 'id');
+        }
+
         public function role(): BelongsTo
         {
             return $this->belongsTo(Role::class);

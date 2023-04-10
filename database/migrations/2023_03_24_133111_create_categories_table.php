@@ -13,7 +13,6 @@
             Schema::create('categories', function (Blueprint $table) {
                 $table->id();
                 $table->string('title');
-                $table->timestamps();
             });
         }
 

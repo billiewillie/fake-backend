@@ -2,15 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\Post;
+use App\Models\Doc;
+use App\Models\Download;
 use App\Models\User;
-use App\Models\View;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<View>
+ * @extends Factory<Download>
  */
-class ViewFactory extends Factory
+class DownloadFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,9 +20,9 @@ class ViewFactory extends Factory
     public function definition(): array
     {
         return [
-            'post_id' => Post::inRandomOrder()->first(),
+            'doc_id' => Doc::inRandomOrder()->first(),
             'user_token' => User::inRandomOrder()->first()->user_token,
-            'show_count' => fake()->randomNumber()
+            'download_count' => fake()->randomNumber()
         ];
     }
 }
