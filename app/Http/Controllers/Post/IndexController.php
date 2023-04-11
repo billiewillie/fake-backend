@@ -19,9 +19,7 @@
                 ->startEndDate($request)
                 ->postsIds($request)
                 ->isPublished($request)
-                ->orderBy(
-                    request('sort', 'published_date'),
-                    request('order', 'desc'))
+                ->order($request)
                 ->paginate($request->query('limit'));
         }
     }

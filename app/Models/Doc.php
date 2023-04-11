@@ -27,4 +27,42 @@ class Doc extends Model
     {
         return $this->hasMany(Download::class);
     }
+
+    // ?department_id=1
+    public function scopeDepartmentId($query, $request)
+    {
+        if ($request->query('department_id')) {
+            return $query->where('department_id', intval($request->query('department_id')));
+        }
+
+        return $query;
+    }
+
+    // ?extension_id=1
+    public function scopeExtensionId($query, $request)
+    {
+        if ($request->query('extension_id')) {
+            return $query->where('extension_id', intval($request->query('extension_id')));
+        }
+
+        return $query;
+    }
+
+    public function scopeIsPublished($query)
+    {
+        return $query->where("is_published", 1)
+            ->where("published_date", "<", now())
+            ->where("unpublished_date", null);
+    }
+
+    public function scopeOrder($query, $request)
+    {
+        if ($request->query('sort') === 'alphabetical') {
+            return $query->orderBy('title');
+        }
+
+        return $query->orderBy(
+            request('sort', 'published_date'),
+            request('order', 'desc'));
+    }
 }

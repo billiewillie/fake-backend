@@ -13,6 +13,10 @@ class IndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return Doc::all();
+        return Doc::departmentId($request)
+            ->extensionId($request)
+            ->isPublished($request)
+            ->order($request)
+            ->get();
     }
 }
