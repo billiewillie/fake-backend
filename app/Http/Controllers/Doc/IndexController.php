@@ -15,8 +15,9 @@ class IndexController extends Controller
     {
         return Doc::departmentId($request)
             ->extensionId($request)
-            ->isPublished($request)
+            ->search($request)
             ->order($request)
+            ->isPublished($request)
             ->get();
     }
 }

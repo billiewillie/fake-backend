@@ -55,6 +55,15 @@ class Doc extends Model
             ->where("unpublished_date", null);
     }
 
+    public function scopeSearch($query, $request)
+    {
+        if ($request->query('search')) {
+            return $query
+                ->where('title', 'like', '%' . $request->query('search') . '%')
+                ->orWhere('file', 'like', '%' . $request->query('search') . '%');
+        }
+    }
+
     public function scopeOrder($query, $request)
     {
         if ($request->query('sort') === 'alphabetical') {

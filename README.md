@@ -14,3 +14,7 @@ http://localhost/api/docs?&extension_id=1
 ## вывод доков по id департамента и id расширения файла
 
 http://localhost/api/docs?department_id=1&extension_id=1
+
+## вывод доков по поиску
+
+http://localhost/api/docs?search=facere
