@@ -1,14 +1,14 @@
 <?php
 
-    namespace App\Http\Controllers\Department;
+namespace App\Http\Controllers\Department;
 
-    use App\Http\Controllers\Controller;
-    use App\Models\Department;
+use App\Http\Controllers\Controller;
+use App\Models\Department;
 
-    class ShowController extends Controller
+class ShowController extends Controller
+{
+    public function __invoke(Department $department)
     {
-        public function __invoke(Department $department)
-        {
-            return $department;
-        }
+        return $department;
     }
+}

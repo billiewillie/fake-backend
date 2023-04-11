@@ -1,19 +1,18 @@
 <?php
 
-    namespace App\Http\Controllers\Post;
+namespace App\Http\Controllers\Post;
 
-    use App\Http\Controllers\Controller;
-    use App\Models\Post;
-    use Illuminate\Http\Client\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Post;
 
-    class ShowController extends Controller
+class ShowController extends Controller
+{
+    /**
+     * Handle the incoming request.
+     */
+    public function __invoke(Post $post)
     {
-        /**
-         * Handle the incoming request.
-         */
-        public function __invoke(Post $post): Post
-        {
-            $post->increment('show_count');
-            return $post->load('likes', 'comments');
-        }
+        $post->increment('show_count');
+        return $post->load('likes', 'comments');
     }
+}
