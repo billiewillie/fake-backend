@@ -1,3 +1,11 @@
+## вывод доков
+
+http://localhost/api/docs
+
+## вывод одной доки по id
+
+http://localhost/api/docs/1
+
 ## вывод доков по id департамента
 
 http://localhost/api/docs?department_id=1
