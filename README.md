@@ -9,7 +9,7 @@ http://localhost/api/docs?&extension_id=1
 ## вывод доков в алфавитном порядке
 по умолчанию доки выводятся по дате опубликования (от самого нового)
 
-http://localhost/api/docs?&extension_id=1
+http://localhost/api/docs?order=alphabetical
 
 ## вывод доков по id департамента и id расширения файла
 
